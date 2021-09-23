@@ -1,0 +1,26 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Testes plataforma sunne ineva",
+  "main": "index.js",
+  "scripts": {
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "clear:results": "rd /s allure-results",
+    "clear:report": "rd /s allure-report ",
+    "clear": "npx npm-run-all clear:report clear:results",
+    "cypress": "npx cypress run --config video=false --env allure=true",
+    "testes": "npx npm-run-all allure:generate allure:open"
+  },
+  "author": "Victor Lourenco",
+  "license": "Sunne",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.14.0",
+    "cypress-localstorage-commands": "^1.5.0"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.13.8",
+    "cypress": "^8.4.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
